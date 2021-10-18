@@ -40,20 +40,22 @@ const handleErrors = (err) => {
 // Inserting and Stroring users data into database by POST request
 const insertUsers = async(req, res, next) => {
 
-    let newUser = new usersModel({
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
-        email: req.body.email,
-        password: req.body.password,
-        role: req.body.role,
-        profileImage: req.body.profileImage
-    });
+        let newUser = new usersModel({
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            email: req.body.email,
+            password: req.body.password,
+            role: req.body.role,
+            profileImage: req.body.profileImage
+        });
 
-    try {
+        try {
 
-        const user = await newUser.save();
+            const user = await newUser.save();
 
-        res.status(201).json({ message: "User Registered Successfully!" });
+            res.status(201).json({
+                        message: `${user.firstName + ` ` + user.lastName} Registered Successfully!, Hi... User, You are signed in our System`
+        });
 
     } catch (err) {
 
