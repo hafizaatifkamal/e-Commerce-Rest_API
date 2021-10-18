@@ -12,13 +12,7 @@ const router = require("./routes/index");
 app.use(express.json());
 app.use(cookieParser());
 
-// app.use(
-//     express.urlencoded({
-//         extended: true
-//     })
-// );
 
-// This is the root Router
 app.get("/", (req, res) => res.send("Hello there! ....This is the homepage...."));
 app.use(router);
 

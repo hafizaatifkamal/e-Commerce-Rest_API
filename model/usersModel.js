@@ -17,7 +17,7 @@ const usersSchema = mongoose.Schema({
     },
     password: {
         type: String,
-        require: [true, "Please enter a secret Password for your khajana ki tijori"],
+        required: [true, "Please enter a secret Password for your khajana ki tijori"],
         minlength: [5, "Chota hai kya tera, chal atleast 5 characters enter kar"]
     },
     role: String,
