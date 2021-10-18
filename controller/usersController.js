@@ -2,10 +2,14 @@ const { json } = require("body-parser");
 const usersModel = require("../model/usersModel");
 const UsersRoute = require("../routes/users");
 
+/* Authentication Part */
+
 
 // Handelling all possible errors
 const handleErrors = (err) => {
+
     console.log(err.message, err.code);
+
     let errors = { firstName: '', email: '', password: '' };
 
     // Checking for duplicate email
@@ -26,6 +30,11 @@ const handleErrors = (err) => {
     return errors;
 }
 
+
+
+
+
+/* CRUD Operations Part */
 
 
 // Inserting and Stroring users data into database by POST request
