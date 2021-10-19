@@ -30,7 +30,7 @@ const getRolesDetails = async(req, res) => {
 
         res.status(200).send(rolesDetails);
     } catch (error) {
-
+        console.log(`Something went wrong! ${error}`);
     }
 };
 

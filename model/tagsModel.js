@@ -1,5 +1,8 @@
 const mongoose = require("mongoose");
 
+const slugURL = require("mongoose-slug-generator");
+
+
 const tagsSchema = mongoose.Schema({
     name: {
         type: String,
@@ -7,10 +10,16 @@ const tagsSchema = mongoose.Schema({
     },
     slug: {
         type: String,
-        unique: true,
-        lowecase: true
+        slug: "name"
     }
+}, { timestamps: true });
+
+
+tagsSchema.pre("save", function(next) {
+    this.slug = this.name.split(" ").join("-");
+    next();
 });
+
 
 const tagsModel = mongoose.model("tag", tagsSchema);
 

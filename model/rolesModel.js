@@ -12,7 +12,7 @@ const rolesSchema = mongoose.Schema({
         type: String,
         slug: "name"
     }
-});
+}, { timestamps: true });
 
 
 rolesSchema.pre("save", function(next) {

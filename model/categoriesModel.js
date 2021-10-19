@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 
+const slugURL = require("mongoose-slug-generator");
+
 const categoriesSchema = mongoose.Schema({
     name: {
         type: String,
@@ -7,13 +9,18 @@ const categoriesSchema = mongoose.Schema({
     },
     slug: {
         type: String,
-        required: true,
-        unique: true,
-        lowercase: true
+        slug: "name"
     },
     image: String,
     description: String
 });
+
+
+categoriesSchema.pre("save", function(next) {
+    this.slug = this.name.split(" ").join("-");
+    next();
+});
+
 
 const categoriesModel = mongoose.model("categorie", categoriesSchema);
 
