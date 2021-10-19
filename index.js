@@ -1,4 +1,3 @@
-const cookieParser = require("cookie-parser");
 const express = require("express");
 const mongoose = require("mongoose");
 
@@ -10,7 +9,6 @@ const db = mongoose.connection;
 
 const router = require("./routes/index");
 app.use(express.json());
-app.use(cookieParser());
 
 
 app.get("/", (req, res) => res.send("Hello there! ....This is the homepage...."));

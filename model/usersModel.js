@@ -22,7 +22,8 @@ const usersSchema = mongoose.Schema({
     },
     role: String,
     profileImage: String,
-});
+
+}, { timestamps: true });
 
 
 usersSchema.pre("save", async function(next) {
