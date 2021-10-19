@@ -54,7 +54,7 @@ const insertUsers = async(req, res, next) => {
             const user = await newUser.save();
 
             res.status(201).json({
-                        message: `${user.firstName + ` ` + user.lastName} Registered Successfully!, Hi... User, You are signed in our System`
+                        message: `User Registered Successfully!, Hi... ${user.firstName + ` ` + user.lastName}, Congratulations.... You are signed in our System`
         });
 
     } catch (err) {
