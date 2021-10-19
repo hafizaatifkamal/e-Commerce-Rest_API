@@ -1,4 +1,5 @@
 const categoriesModel = require("../model/categoriesModel");
+const CategoriesRoute = require("../routes/categories");
 
 
 const insertCategories = async(req, res) => {
@@ -30,7 +31,7 @@ const getCategoriesDetails = async(req, res) => {
 
         res.status(200).send(categoriesDetails);
     } catch (error) {
-
+        console.log(`Something went wrong! ${error}`);
     }
 };
 

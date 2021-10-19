@@ -7,13 +7,14 @@ const categoriesSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    image: String,
+    description: String,
     slug: {
         type: String,
+        lowercase: true,
         slug: "name"
-    },
-    image: String,
-    description: String
-});
+    }
+}, { timestamp: true });
 
 
 categoriesSchema.pre("save", function(next) {
