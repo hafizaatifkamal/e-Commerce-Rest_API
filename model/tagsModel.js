@@ -10,6 +10,7 @@ const tagsSchema = mongoose.Schema({
     },
     slug: {
         type: String,
+        lowercase: true,
         slug: "name"
     }
 }, { timestamps: true });

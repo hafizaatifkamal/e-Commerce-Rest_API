@@ -1,4 +1,5 @@
 const tagsModel = require("../model/tagsModel");
+const TagsRoute = require("../routes/tags");
 
 
 const insertTags = async(req, res) => {
@@ -30,7 +31,7 @@ const getTagsDetails = async(req, res) => {
 
         res.status(200).send(tagsDetails);
     } catch (error) {
-
+        console.log(`Something went wrong! ${error}`);
     }
 };
 

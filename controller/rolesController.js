@@ -1,4 +1,5 @@
 const rolesModel = require("../model/rolesModel");
+const RolesRoute = require("../routes/roles");
 
 
 const insertRoles = async(req, res) => {
